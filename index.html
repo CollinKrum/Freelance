@@ -1,444 +1,445 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collin Krum - Python Developer & Web Designer</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collin Krum - Python Developer & Web Designer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-        }
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #4a5568;
-        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #4a5568;
+        }
 
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
 
-        .nav-links a {
-            text-decoration: none;
-            color: #4a5568;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
+        .nav-links a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
 
-        .nav-links a:hover {
-            color: #667eea;
-        }
+        .nav-links a:hover {
+            color: #667eea;
+        }
 
-        main {
-            margin-top: 80px;
-        }
+        main {
+            margin-top: 80px;
+        }
 
-        .hero {
-            text-align: center;
-            padding: 5rem 0;
-            color: white;
-        }
+        .hero {
+            text-align: center;
+            padding: 5rem 0;
+            color: white;
+        }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
 
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
 
-        .cta-button {
-            display: inline-block;
-            background: #ffffff;
-            color: #667eea;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
+        .cta-button {
+            display: inline-block;
+            background: #ffffff;
+            color: #667eea;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
 
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
 
-        .section {
-            padding: 4rem 0;
-            background: white;
-            margin: 2rem 0;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
+        .section {
+            padding: 4rem 0;
+            background: white;
+            margin: 2rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
 
-        .section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #4a5568;
-        }
+        .section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #4a5568;
+        }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
 
-        .service-card {
-            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid #e2e8f0;
-        }
+        .service-card {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
 
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
 
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
 
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #2d3748;
-        }
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2d3748;
+        }
 
-        .service-card ul {
-            list-style: none;
-            text-align: left;
-            color: #4a5568;
-        }
+        .service-card ul {
+            list-style: none;
+            text-align: left;
+            color: #4a5568;
+        }
 
-        .service-card li {
-            margin: 0.5rem 0;
-            padding-left: 1rem;
-            position: relative;
-        }
+        .service-card li {
+            margin: 0.5rem 0;
+            padding-left: 1rem;
+            position: relative;
+        }
 
-        .service-card li:before {
-            content: "✓";
-            color: #48bb78;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
+        .service-card li:before {
+            content: "✓";
+            color: #48bb78;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
 
-        .about {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+        .about {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-        .about p {
-            font-size: 1.1rem;
-            color: #4a5568;
-            margin-bottom: 1.5rem;
-        }
+        .about p {
+            font-size: 1.1rem;
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+        }
 
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
 
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #4a5568;
-            font-weight: 500;
-        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #4a5568;
+            font-weight: 500;
+        }
 
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #e2e8f0;
-            border-radius: 10px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
 
-        .submit-button {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            width: 100%;
-        }
+        .submit-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+        }
 
-        .submit-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-        }
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
 
-        footer {
-            background: #2d3748;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 2rem;
-        }
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
 
-        .social-links {
-            margin-top: 1rem;
-        }
+        .social-links {
+            margin-top: 1rem;
+        }
 
-        .social-links a {
-            color: white;
-            text-decoration: none;
-            margin: 0 1rem;
-            font-size: 1.2rem;
-            transition: color 0.3s ease;
-        }
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
 
-        .social-links a:hover {
-            color: #667eea;
-        }
+        .social-links a:hover {
+            color: #667eea;
+        }
 
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
 
-            .hero h1 {
-                font-size: 2.5rem;
-            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
 
-            .hero p {
-                font-size: 1.1rem;
-            }
+            .hero p {
+                font-size: 1.1rem;
+            }
 
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">Collin Krum</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">My Work</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header>
+        <nav class="container">
+            <div class="logo">Collin Krum</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">My Work</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <main>
-                <section id="home" class="hero">
-            <div class="container">
-                <h1>Websites & Automation That Work For You</h1>
-                <p>Custom one-page sites and Python tools that save you time, look great, and help grow your business.</p>
-                <a href="#contact" class="cta-button">Get In Touch</a>
-            </div>
-        </section>
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Websites & Automation That Work For You</h1>
+                <p>Custom one-page sites and Python tools that save you time, look great, and help grow your business.</p>
+                <a href="#contact" class="cta-button">Get In Touch</a>
+            </div>
+        </section>
 
-                <section id="services" class="section">
-            <div class="container">
-                <h2>My Services</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <span class="service-icon">🐍</span>
-                        <h3>Python Development</h3>
-                        <ul>
-                            <li>Web scraping & automation</li>
-                            <li>Data analysis & processing</li>
-                            <li>Script automation</li>
-                            <li>Database integration</li>
-                        </ul>
-                    </div>
-                    <div class="service-card">
-                        <span class="service-icon">🌐</span>
-                        <h3>Web Design</h3>
-                        <ul>
-                            <li>Custom one-page websites</li>
-                            <li>Mobile-friendly responsive design</li>
-                            <li>Landing pages that convert</li>
-                            <li>HTML/CSS/JavaScript builds</li>
-                            <li>Portfolio & small business sites</li>
-                            <li>Fast delivery & ongoing support</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <section id="services" class="section">
+            <div class="container">
+                <h2>My Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <span class="service-icon">🐍</span>
+                        <h3>Python Development</h3>
+                        <ul>
+                            <li>Web scraping & automation</li>
+                            <li>Data analysis & processing</li>
+                            <li>Script automation</li>
+                            <li>Database integration</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <span class="service-icon">🌐</span>
+                        <h3>Web Design</h3>
+                        <ul>
+                            <li>Custom one-page websites</li>
+                            <li>Mobile-friendly responsive design</li>
+                            <li>Landing pages that convert</li>
+                            <li>HTML/CSS/JavaScript builds</li>
+                            <li>Portfolio & small business sites</li>
+                            <li>Fast delivery & ongoing support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <section id="portfolio" class="section">
-            <div class="container">
-                <h2>My Work</h2>
-                <p style="text-align:center; color:#4a5568; max-width:700px; margin:0 auto 2rem;">
-                    Here are some example website styles I can create for you. These are clean, responsive designs
-                    perfect for small businesses, personal portfolios, or landing pages.
-                </p>
-                <div class="services-grid">
-                    <a href="https://collinkrum.github.io/Sweet_Bakery/" target="_blank" class="service-card">
-                        <img src="images/Bake.jpg" alt="Bakery Website" style="width:100%; border-radius:10px; margin-bottom:1rem;">
-                        <h3>Sweet Bakery Website</h3>
-                        <p style="color:#4a5568;">This project showcases a clean and inviting web design for a bakery.</p>
-                    </a>
-                    <a href="https://collinkrum.github.io/Consulting_example/" target="_blank" class="service-card">
-                        <img src="images/Consult_ex.png" alt="Conulsting example Screenshot" style="width:100%; border-radius:10px; margin-bottom:1rem;">
-                        <h3>Consulting Website</h3>
-                        <p style="color:#4a5568;">Professional, modern layout for consultants and service providers.</p>
-                    </a>
-                    <a href="https://collinkrum.github.io/Photo_Website/" target="_blank" class="service-card">
-                        <img src="images/Stock_Photo.jpg" alt="Photography example Screenshot" style="width:100%; border-radius:10px; margin-bottom:1rem;">
-                        <h3>Photography Portfolio</h3>
-                        <p style="color:#4a5568;">Clean and creative showcase for photographers and artists.</p>
-                    </a>
-                </div>
-            </div>
-        </section>
+        <section id="portfolio" class="section">
+            <div class="container">
+                <h2>My Work</h2>
+                <p style="text-align:center; color:#4a5568; max-width:700px; margin:0 auto 2rem;">
+                    Here are some example website styles I can create for you. These are clean, responsive designs
+                    perfect for small businesses, personal portfolios, or landing pages.
+                </p>
+                <div class="services-grid">
+                    <a href="https://collinkrum.github.io/Sweet_Bakery/" target="_blank" class="service-card">
+                        <img src="images/Bake.jpg" alt="Bakery Website" style="width:100%; border-radius:10px; margin-bottom:1rem;">
+                        <h3>Sweet Bakery Website</h3>
+                        <p style="color:#4a5568;">This project showcases a clean and inviting web design for a bakery.</p>
+                    </a>
+                    <a href="https://collinkrum.github.io/Consulting_example/" target="_blank" class="service-card">
+                        <img src="images/Consult_ex.png" alt="Conulsting example Screenshot" style="width:100%; border-radius:10px; margin-bottom:1rem;">
+                        <h3>Consulting Website</h3>
+                        <p style="color:#4a5568;">Professional, modern layout for consultants and service providers.</p>
+                    </a>
+                    <a href="https://collinkrum.github.io/Photo_Website/" target="_blank" class="service-card">
+                        <img src="images/Stock_Photo.jpg" alt="Photography example Screenshot" style="width:100%; border-radius:10px; margin-bottom:1rem;">
+                        <h3>Photography Portfolio</h3>
+                        <p style="color:#4a5568;">Clean and creative showcase for photographers and artists.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
 
-                <section id="about" class="section">
-            <div class="container">
-                <h2>About Me</h2>
-                <div class="about">
-                    <p>
-                        I'm a passionate upcoming developer who specializes in Python programming and modern web design.
-                        With a focus on clean, efficient code and user-friendly interfaces, I help businesses
-                        and individuals bring their digital projects to life.
-                    </p>
-                    <p>
-                        Whether you need a Python script to automate your workflow, a data analysis tool,
-                        or a stunning one-page website, I'm here to deliver high-quality solutions that
-                        meet your specific needs.
-                    </p>
-                    <p>
-                        I believe in clear communication, timely delivery, and building long-term relationships
-                        with my clients. Let's work together to turn your ideas into reality.
-                    </p>
-                </div>
-            </div>
-        </section>
+        <section id="about" class="section">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="about">
+                    <p>
+                        I'm a passionate upcoming developer who specializes in Python programming and modern web design.
+                        With a focus on clean, efficient code and user-friendly interfaces, I help businesses
+                        and individuals bring their digital projects to life.
+                    </p>
+                    <p>
+                        Whether you need a Python script to automate your workflow, a data analysis tool,
+                        or a stunning one-page website, I'm here to deliver high-quality solutions that
+                        meet your specific needs.
+                    </p>
+                    <p>
+                        I believe in clear communication, timely delivery, and building long-term relationships
+                        with my clients. Let's work together to turn your ideas into reality.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-                <section id="contact" class="section">
-            <div class="container">
-                <h2>Let's Work Together</h2>
-                <div class="contact-form">
-                    <form action="https://formspree.io/f/xjkolpgq" method="POST">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="project">Project Type</label>
-                            <select id="project" name="project" style="width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 1rem;">
-                                <option>Python Development</option>
-                                <option>Web Design</option>
-                                <option>Both Python & Web Design</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Project Details</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..."></textarea>
-                        </div>
-                        <button type="submit" class="submit-button">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
+        <section id="contact" class="section">
+            <div class="container">
+                <h2>Let's Work Together</h2>
+                <div class="contact-form">
+                    <form action="https://formspree.io/f/xjkolpgq" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="project">Project Type</label>
+                            <select id="project" name="project" style="width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 1rem;" required>
+                                <option value="">Select a project type...</option>
+                                <option value="Python Development">Python Development</option>
+                                <option value="Web Design">Web Design</option>
+                                <option value="Both Python & Web Design">Both Python & Web Design</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Project Details</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Collin Krum. All rights reserved.</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/collin-krum-2b3976a9/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/CollinKrum" target="_blank">GitHub</a>
-                <a href="mailto:Collindk94@gmail.com">Email</a>
-            </div>
-        </div>
-    </footer>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Collin Krum. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/collin-krum-2b3976a9/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/CollinKrum" target="_blank">GitHub</a>
+                <a href="mailto:Collindk94@gmail.com">Email</a>
+            </div>
+        </div>
+    </footer>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
