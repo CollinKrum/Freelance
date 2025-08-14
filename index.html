@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -202,7 +202,8 @@
         }
 
         .form-group input,
-        .form-group textarea {
+        .form-group textarea,
+        .form-group select {
             width: 100%;
             padding: 1rem;
             border: 2px solid #e2e8f0;
@@ -212,7 +213,8 @@
         }
 
         .form-group input:focus,
-        .form-group textarea:focus {
+        .form-group textarea:focus,
+        .form-group select:focus {
             outline: none;
             border-color: #667eea;
             box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
@@ -234,6 +236,32 @@
         .submit-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .submit-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-status {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .form-status.success {
+            background: #f0fff4;
+            color: #38a169;
+            border: 1px solid #9ae6b4;
+        }
+
+        .form-status.error {
+            background: #fed7d7;
+            color: #e53e3e;
+            border: 1px solid #feb2b2;
         }
 
         footer {
@@ -346,7 +374,7 @@
                         <p style="color:#4a5568;">This project showcases a clean and inviting web design for a bakery.</p>
                     </a>
                     <a href="https://collinkrum.github.io/Consulting_example/" target="_blank" class="service-card">
-                        <img src="images/Consult_ex.png" alt="Conulsting example Screenshot" style="width:100%; border-radius:10px; margin-bottom:1rem;">
+                        <img src="images/Consult_ex.png" alt="Consulting example Screenshot" style="width:100%; border-radius:10px; margin-bottom:1rem;">
                         <h3>Consulting Website</h3>
                         <p style="color:#4a5568;">Professional, modern layout for consultants and service providers.</p>
                     </a>
@@ -385,18 +413,18 @@
             <div class="container">
                 <h2>Let's Work Together</h2>
                 <div class="contact-form">
-                    <form action="https://formspree.io/f/xjkolpgq" method="POST">
+                    <form id="contact-form" action="https://formspree.io/f/xjkolpgq" method="POST">
                         <div class="form-group">
-                            <label for="name">Name</label>
+                            <label for="name">Name *</label>
                             <input type="text" id="name" name="name" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="_replyto" required>
                         </div>
                         <div class="form-group">
-                            <label for="project">Project Type</label>
-                            <select id="project" name="project" style="width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 1rem;" required>
+                            <label for="project">Project Type *</label>
+                            <select id="project" name="project" required>
                                 <option value="">Select a project type...</option>
                                 <option value="Python Development">Python Development</option>
                                 <option value="Web Design">Web Design</option>
@@ -405,11 +433,18 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="message">Project Details</label>
+                            <label for="message">Project Details *</label>
                             <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
                         </div>
-                        <button type="submit" class="submit-button">Send Message</button>
+                        
+                        <!-- Hidden fields for Formspree -->
+                        <input type="hidden" name="_subject" value="New Contact Form Submission">
+                        <input type="hidden" name="_next" value="https://collinkrum.github.io/thank-you.html">
+                        
+                        <button type="submit" class="submit-button" id="submit-btn">Send Message</button>
                     </form>
+                    
+                    <div id="form-status" class="form-status" style="display: none;"></div>
                 </div>
             </div>
         </section>
@@ -438,6 +473,51 @@
                         block: 'start'
                     });
                 }
+            });
+        });
+
+        // Enhanced form handling
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = this;
+            const submitBtn = document.getElementById('submit-btn');
+            const statusDiv = document.getElementById('form-status');
+            
+            // Disable submit button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            
+            // Create form data
+            const formData = new FormData(form);
+            
+            // Send to Formspree
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    statusDiv.className = 'form-status success';
+                    statusDiv.textContent = 'Thank you! Your message has been sent successfully. I\'ll get back to you soon!';
+                    statusDiv.style.display = 'block';
+                    form.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            })
+            .catch(error => {
+                statusDiv.className = 'form-status error';
+                statusDiv.textContent = 'Sorry, there was an error sending your message. Please try again or email me directly at Collindk94@gmail.com';
+                statusDiv.style.display = 'block';
+            })
+            .finally(() => {
+                // Re-enable submit button
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
             });
         });
     </script>
